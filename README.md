@@ -2,7 +2,28 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+This app uses uploadThing for uploading images,
+create an account on [https://uploadthing.com/dashboard](https://uploadthing.com/dashboard)
+
+You will use github to and after it will ask you to create a project, then go ahead and create it.
+
+copy your uploadthingthing secret into .env file
+
+```
+UPLOADTHING_SECRET=your secret
+```
+then,
+
 First, run the development server:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+After, run:
 
 ```bash
 npm run dev
