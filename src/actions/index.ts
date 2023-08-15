@@ -1,8 +1,8 @@
 'use server'
-const  registerUser = async(e:any) =>{
+const  registerUser = async(e:any, url: string) =>{
     const name = e.get('full_name');
     const email = e.get('email');
-    await fetch('http://localhost:3000/api/?name=Joffrey', {
+    const res = await fetch(url, {
       method: 'POST',
       body: JSON.stringify({name, email}),
     }, )

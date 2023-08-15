@@ -10,10 +10,7 @@ const IScroll = () => {
   const [items, setItems] = useState([])
   const [isMounted, setIsMounted] = useState(false)
   const [error, setError] = useState(null)
-  
-  // const fetcher = async() => await fetch(`https://dummyjson.com/products?limit=${limit}`).then((response) => response.json());
 
-  //   const {data, error, isLoading} = useSWR('posts',fetcher)
 
   const nextfetch = async() => {
     setlimit((prev)=>prev<100?prev+20: prev)
