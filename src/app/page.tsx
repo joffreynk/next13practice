@@ -1,17 +1,18 @@
-// 'use client'
+'use client'
 
-// import useSWR from 'swr'
+import useSWR from 'swr'
 
 import registerUser from '../actions';
 
-export default async  function Home() {
+export default  function Home() {
 
-  // const fetcher = async() => await fetch('http://localhost:3000/api').then((response) => response.json());
-  // const { data, error, isLoading } = useSWR('users', fetcher , { refreshInterval: 20 })
+  const fetcher = async() => await fetch('http://localhost:30001/api').then((response) => response.json());
+  const { data, error, isLoading } = useSWR('users', fetcher , { refreshInterval: 20 })
 
-  // if(isLoading) return null;
+  if(isLoading) return null;
+  if (error) return null;
 
-    const data =  await fetch('http://localhost:3000/api',  { next: { revalidate: 1 }, cache: 'no-store' }).then((response) => response.json());
+    // const data =  await fetch('http://localhost:30001/api',  { next: { revalidate: 1 }, cache: 'no-store' }).then((response) => response.json());
 
 
   return (
