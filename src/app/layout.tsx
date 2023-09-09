@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="max-w-[1366px] mx-auto">
+          <div className="flex justify-between">
+            <h1 className="text-4xl font-bold text-blue-500">Topics covered</h1>
+            <div className="flex flex-col gap-2 underline decoration-indigo-700">
+              <Link href="/infinityscroll">Infinity Scroll</Link>
+              <Link href="/uploadandfetch">Upload and fetch</Link>
+              <Link href="/uploadthing">Upload images with uploadthing</Link>
+            </div>
+          </div>
+          {children}
+        </div>
+      </body>
     </html>
-  )
+  );
 }
